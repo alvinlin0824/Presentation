@@ -4,7 +4,7 @@
 // If he bets on wrong number he will lost his betting amount. Game continues till user wants to play
 
 #include <iostream>
-#include <string> // Needed to use strings
+#include <string> 
 #include <cstdlib> // Needed to use random numbers
 #include <ctime>
 using namespace std;
@@ -16,21 +16,7 @@ void drawLine(int n, char symbol)
     cout << "\n" ;
 }
  
-void rules()
-{
-    system("cls");
-    cout << "\n\n";
-    drawLine(80,'-');
-    cout << "\t\tRULES OF THE GAME" << endl;
-    drawLine(80,'-');
-    cout << "\t1. Choose any number between 1 to 10" << endl;
-    cout << "\t2. If you win you will get 10 times of money you bet" << endl;
-    cout << "\t3. If you bet on wrong number you will lose your betting amount" << endl;
-    drawLine(80,'-');
-}
-// void drawLine(int n, char symbol);
-// void rules();
- 
+
 int main()
 {
     string playerName;
@@ -42,13 +28,12 @@ int main()
  
     srand(time(0)); // "Seed" the random generator
 
-    drawLine(60,'_');
+    drawLine(60,'=');
     cout << "\n\n\n\t\tCASINO GAME\n\n\n\n";
-    drawLine(60,'_');
+    drawLine(60,'=');
  
     cout << "\n\nEnter Your Name: ";
     cin >> playerName;
-    // getline(cin, playerName);
  
     cout << "\n\nEnter Deposit amount to play game: $";
     cin >> amount;
@@ -56,7 +41,15 @@ int main()
     do
     {
         system("cls");
-        rules();
+        cout << "\n\n";
+        drawLine(80,'*');
+        cout << "\t\tRULES OF THE GAME" << endl;
+        drawLine(80,'*');
+        cout << "\t1. Choose any number between 1 to 10" << endl;
+        cout << "\t2. If you win you will get 10 times of money you bet" << endl;
+        cout << "\t3. If you bet on wrong number you will lose your betting amount" << endl;
+        drawLine(80,'*');
+
         cout << "\n\nYour current balance is $" << amount << endl;
 		
 		// Get player's betting amount
@@ -65,9 +58,10 @@ int main()
             cout << playerName << ", enter money to bet : $";
             cin >> bettingAmount;
             if(bettingAmount > amount)
-                cout << "Your betting amount is more than your current balance\n"
-                     <<"\nRe-enter data\n";
-        }while(bettingAmount > amount);
+                cout << "Your betting amount is more than your current balance" << endl
+                     << "Re-enter data" << endl;
+
+        } while(bettingAmount > amount);
  
 		// Get player's numbers
         do
@@ -75,15 +69,15 @@ int main()
             cout << "Guess your number to bet between 1 to 10 :";
             cin >> guess;
             if(guess <= 0 || guess > 10)
-                cout << "Please check the number!! should be between 1 to 10\n"
-                    <<"\nRe-enter data\n";
-        }while(guess <= 0 || guess > 10);
+                cout << "Please check the number!! should be between 1 to 10" << endl
+                     <<"Re-enter data" << endl;
+        } while(guess <= 0 || guess > 10);
  
         dice = rand()%10 + 1; // Will hold the randomly generated integer between 1 and 10
     
         if(dice == guess)
         {
-            cout << "\n\nGood Luck!! You won Rs." << bettingAmount * 10;
+            cout << "\n\nGood Luck!! You won " << bettingAmount * 10;
             amount = amount + bettingAmount * 10;
         }
         else
@@ -99,13 +93,13 @@ int main()
             cout << "You have no money to play";
             break;
         }
-        cout << "\n\n-->Do you want to play again (y/n)?";		
+        cout << "\n\nDo you want to play again (y/n)?";		
         cin >> choice;
-    } while(choice =='Y' || choice=='y');
+    } while(choice == 'Y' || choice == 'y');
     
     cout << "\n\n\n";
     drawLine(70,'=');
-    cout << "\n\nThanks for playing game. Your balance amount is $" << amount << endl;
+    cout << "Thanks for playing game. Your balance amount is $" << amount << endl;
     drawLine(70,'=');
  
     return 0;
