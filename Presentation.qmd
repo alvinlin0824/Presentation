@@ -1,0 +1,37 @@
+---
+title: "Casino"
+author: "林品賢"
+format: pptx
+---
+
+## Rules
+
+This is a Number Guessing Game. Player deposits an initial amount to start playing game. He guess a number between 1 to 10 and enters betting amount. If he wins he will get 10 times of money he bets. If he bets on wrong number he will lost his betting amount. Game continues till user wants to play.
+
+## Code
+
+![](Library.png){fig-align="center" width="591"}
+
+## Code
+
+![](Init.png){fig-align="center"}
+
+## Code
+
+![](name.png){fig-align="center"}
+
+## Code
+
+![](Rule.png){fig-align="center"}
+
+## Code
+
+![](Bet.png){fig-align="center"}
+
+## Code
+
+![](Player.png){fig-align="center"}
+
+## Code
+
+![](final.png){fig-align="center"}
